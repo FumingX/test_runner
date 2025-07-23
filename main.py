@@ -7,6 +7,7 @@ import seaborn as sns
 import requests
 import json
 from io import StringIO
+from datetime import datetime, timezone, timedelta
 
 def test_versions():
     print("✅ Package Versions:")
@@ -50,6 +51,8 @@ def test_requests():
         print(f"Request failed with status code: {response.status_code}")
 
 if __name__ == "__main__":
+    print("⏰ Current UTC Time:", datetime.utcnow())
+    print("⏰ Current Beijing Time:", datetime.utcnow() + timedelta(hours=8))
     test_versions()
     test_dataframe()
     test_plot()
